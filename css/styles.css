@@ -100,13 +100,16 @@
 
   footer {
     background-color: var(--very-dark-grayish-blue);
-    padding: 2.2rem;
-    display: none;
+    padding: 0;
+    max-height: 0;
+    display: flex;
     gap: 2rem;
     position: absolute;
     bottom: 0;
     width: 100%;
     user-select: none;
+    visibility: hidden;
+    transition: .2s ease;
   }
 
   span {
@@ -129,7 +132,9 @@
 
   /* === JAVASCRIPT CLASSES == */
   .active footer {
-    display: flex;
+    visibility: visible;
+    max-height: unset;
+    padding: 2.2rem;
   }
 
   .active .share {
@@ -175,13 +180,11 @@
 
     footer {
       justify-content: center;
-      width: 21rem;
-      height: 1.9rem;
-      padding: 1.8rem;
+      width: unset;
       border-radius: 1rem;
       box-shadow: 0.4rem 0.4rem 0.8rem hsla(0, 0%, 0%, 20%);
       bottom: 9.5rem;
-      right: -6.8rem;
+      right: -6.5rem;
     }
 
     .triangle {
@@ -193,5 +196,10 @@
       border-right: 1.3rem solid transparent;
       border-bottom: 1.3rem solid transparent;
       border-left: 1.3rem solid transparent;
+    }
+    
+    /* === JAVASCRIPT CLASSES LARGE SCREEN == */
+    .active footer {
+    padding: 1.7rem 3rem;
     }
   }
